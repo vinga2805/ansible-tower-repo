@@ -4,4 +4,4 @@
    - name: Create an empty bucket
      aws_s3: bucket={{ bucket_name }} mode=create permission={{ permission }} encrypt=yes encryption_mode=AES256 region={{ region }}
    - name: Enable s3 logging for the bucket
-     s3_logging: name={{ bucket_name }} target_bucket=s3-all-logging-bucket target_prefix=s3logs/{{ bucket_name }} state: present
+     s3_logging: name={{ bucket_name }} target_bucket=s3-all-logging-bucket target_prefix=s3logs/{{ bucket_name }} state=present
