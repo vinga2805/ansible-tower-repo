@@ -2,4 +2,4 @@
 - hosts: all
   tasks:
    - name: Create an empty bucket
-     aws_s3: bucket=mybucket98321571 mode=create permission=public-read
+     aws_s3: bucket={{ bucket_name }} mode=create permission={{ permisssion }} encryption_mode=AES256 region={{ region }}
