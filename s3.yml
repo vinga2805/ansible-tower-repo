@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+   - name: Create an empty bucket
+     aws_s3: bucket=mybucket98321571 mode=create permission=public-read
