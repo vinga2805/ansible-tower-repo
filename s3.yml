@@ -2,4 +2,4 @@
 - hosts: all
   tasks:
    - name: Create an empty bucket
-     aws_s3: bucket={{ bucket_name }} mode=create permission={{ permisssion }} encryption_mode=AES256 region={{ region }}
+     aws_s3: bucket={{ bucket_name }} mode=create permission={{ permission }} encryption_mode=AES256 region={{ region }}
