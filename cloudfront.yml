@@ -11,7 +11,7 @@
         state: present
         caller_reference: access-identity-{{ bucket_name }}.s3.amazonaws.com
         origins:
-            - id: S3-{{ bucket_name }}
+            - id: "S3-{{ bucket_name }}"
               domain_name: "{{ bucket_name }}.s3.amazonaws.com"
         default_cache_behavior:
-              target_origin_id: S3-{{ bucket_name }}
+              target_origin_id: "S3-{{ bucket_name }}"
