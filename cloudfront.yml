@@ -1,17 +1,13 @@
 ---
 - hosts: all
   tasks:
-   - name: Create an origin access identity
-     cloudfront_origin_access_identity: 
-        state: present 
-        caller_reference: access-identity-{{ bucket_name }}.s3.amazonaws.com 
-        comment: access-identity-{{ bucket_name }}.s3.amazonaws.com
    - name: Create Cloudfront ditsribution
      cloudfront_distribution:
         state: present
-        caller_reference: access-identity-{{ bucket_name }}.s3.amazonaws.com
         origins:
             - id: "S3-{{ bucket_name }}"
               domain_name: "{{ bucket_name }}.s3.amazonaws.com"
+              origin_path: ''
+              s3_origin_access_identity_enabled: yes
         default_cache_behavior:
               target_origin_id: "S3-{{ bucket_name }}"
