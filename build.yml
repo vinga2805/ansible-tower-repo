@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+   - name: create index file
+     copy:
+       dest: /tmp/index.html
+       content: |
+         version {{ id }}
+   - name: Upload index.html
+     command: aws s3 cp /tmp/index.html s3://vingacloudfronttest
